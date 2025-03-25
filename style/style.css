@@ -17,7 +17,7 @@ body {
     min-height: 100vh;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: right center;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/bg/errorBackground.gif');
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/bg/testingBackground.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
