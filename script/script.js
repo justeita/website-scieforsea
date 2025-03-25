@@ -1,14 +1,13 @@
 const phrases = [
-    "HOK > ML secara subjektif..."
+    "Waiting Something Happened?...",
 ];
 
-// Pilih random phrase
+const mainContainer = document.querySelector('.main-container');
+
 const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 
-// Set heading dan sesuaikan kecepatan animasi
 const heading = document.getElementById('dynamicHeading');
 heading.textContent = randomPhrase;
 
-// Sesuaikan waktu animasi berdasarkan panjang teks
-const animationTime = randomPhrase.length / 10;
-heading.style.animationDuration = `${animationTime}s, 0.75s`;
+const animationTime = randomPhrase.length * 0.1; //cepat ketik
+heading.style.animationDuration = `${Math.max(animationTime, 2)}s, 0.75s`;
