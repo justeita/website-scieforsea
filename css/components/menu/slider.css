@@ -1,0 +1,89 @@
+.time-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+    padding: 0 8px;
+}
+
+.time-slider {
+    flex: 1;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.time-slider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background: rgba(78, 205, 196, 0.2);
+    border-radius: 2px;
+}
+
+.time-slider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: var(--progress, 0%);
+    background: #4ecdc4;
+    border-radius: 2px;
+    transition: width 0.1s ease-out;
+}
+
+.time-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #4ecdc4;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.time-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #4ecdc4;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.current-time,
+.duration {
+    font-size: 0.8em;
+    color: #4ecdc4;
+    min-width: 45px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .time-control {
+        padding: 0 4px;
+        gap: 5px;
+    }
+
+    .current-time,
+    .duration {
+        font-size: 0.75em;
+        min-width: 35px; /* Kurangi lebar minimum */
+    }
+
+    .time-slider {
+        margin: 0 2px; /* Tambah margin untuk jarak dari text */
+    }
+}

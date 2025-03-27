@@ -1,0 +1,115 @@
+/* Testing page specific styles */
+h1 {
+    font-size: 2rem;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    color: #1F2226;
+    opacity: 0; /* Sembunyikan teks di awal */
+    width: 0; /* Mulai dengan width 0 */
+    border-right: 2px solid transparent; /* Tambahkan border untuk kursor */
+    transition: opacity 0.1s ease; /* Tambahkan transisi halus */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: var(--text-width); }
+}
+
+/* Modifikasi animasi kursor */
+@keyframes blink-caret {
+    from, to { 
+        border-right-color: transparent;
+    }
+    40%, 60% { 
+        border-right-color: #1F2226;
+    }
+}
+
+/* Kurangi efek flash */
+@keyframes type-flash {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.95;
+    }
+}
+
+/* Tambahkan class untuk elemen yang sedang diketik */
+.typing {
+    animation: 
+        typing var(--typing-duration) steps(var(--char-count), end) forwards,
+        blink-caret 1s step-end infinite;
+    border-right: 2px solid #1F2226;
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        white-space: normal;
+        animation: fade-in 1s ease-out forwards !important;
+        width: 100% !important;
+    }
+
+    .background-video {
+        position: absolute;
+        height: 100vh;
+        object-fit: cover;
+    }
+    
+    .background-video[src*="mobile"] {
+        display: block;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Fix music light effect for mobile */
+    .music-light-effect {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .music-light-effect.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    @keyframes lanternPulse {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.3;
+            filter: blur(5px);
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.05);
+            opacity: 0.5;
+            filter: blur(8px);
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.3;
+            filter: blur(5px);
+        }
+    }
+}

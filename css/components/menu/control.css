@@ -1,0 +1,48 @@
+.custom-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.custom-controls button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(78, 205, 196, 0.2);
+    color: #4ecdc4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.custom-controls button:hover {
+    background: rgba(78, 205, 196, 0.3);
+    transform: scale(1.1);
+}
+
+.custom-controls button:active {
+    transform: scale(0.95);
+}
+
+#rewindButton, #forwardButton {
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .custom-controls {
+        gap: 8px; /* Kurangi gap antar button */
+    }
+
+    .custom-controls button {
+        width: 32px; /* Kurangi ukuran button */
+        height: 32px;
+    }
+
+    #rewindButton, #forwardButton {
+        font-size: 0.8em;
+    }
+}

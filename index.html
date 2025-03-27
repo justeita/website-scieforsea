@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Scieforsea</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>Testing - Scieforsea</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/testing.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="main-container">
+        <button class="menu-btn" id="menuButton" aria-label="Toggle Menu">
+            <div class="menu-btn__bar"></div>
+            <div class="menu-btn__bar"></div>
+            <div class="menu-btn__bar"></div>
+        </button>
+        <video class="background-video" autoplay muted loop playsinline>
+            <!-- Desktop video -->
+            <source src="assets/video/background/bg-video-dekstop.mp4" type="video/mp4">
+            <source src="assets/video/background/bg-video-dekstop.webm" type="video/webm">
+            <!-- Mobile video -->
+            <source src="assets/video/background/bg-video-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source src="assets/video/background/bg-video-mobile.webm" type="video/webm" media="(max-width: 768px)">
+        </video>
         <div class="content-wrapper">
             <div class="content">
                 <h1 id="dynamicHeading"></h1>
@@ -18,6 +33,58 @@
             </div>
         </div>
     </div>
-    <script src="script/script.js"></script>
+    
+    <nav class="nav-container" id="menuPanel">
+        <div class="nav-menu">
+            <div class="nav-header">
+                <span class="menu-title">SCIEFORSEA</span>
+            </div>
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li class="nav-item" style="--i: 1;"><a href="pages/unknow.html"><span class="menu-icon">🏠</span>???</a></li>
+                    <li class="nav-item" style="--i: 2;"><a href="pages/unknow.html"><span class="menu-icon">🏫</span>???</a></li>
+                    <li class="nav-item" style="--i: 3;"><a href="pages/unknow.html"><span class="menu-icon">📱</span>???</a></li>
+                    <li class="nav-item" style="--i: 4;"><a href="pages/unknow.html"><span class="menu-icon">❗</span>???</a></li>
+                    <li class="nav-item" style="--i: 5;"><a href="pages/unknow.html"><span class="menu-icon">🪧</span>???</a></li>
+                </ul>
+            </div>
+            
+            <!-- Audio Player Section -->
+            <div class="audio-player-section">
+                <div class="audio-controls">
+                    <audio id="backgroundMusic" loop>
+                        <source src="assets/audio/audio-main-background.mp3" type="audio/mpeg">
+                    </audio>
+                    <div class="current-song">
+                        <span class="song-status">Not Playing</span>
+                        <span class="song-type">Background Music</span>
+                        <span class="song-title">♪ Littleroot Town</span>
+                    </div>
+                    <div class="time-control">
+                        <span class="current-time">0:00</span>
+                        <input type="range" class="time-slider" value="0" step="1">
+                        <span class="duration">0:00</span>
+                    </div>
+                    <div class="custom-controls">
+                        <button id="rewindButton" aria-label="Rewind 5s">
+                            <i class="fas fa-rotate-left"></i>
+                        </button>
+                        <button id="playPauseButton" aria-label="Play/Pause">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button id="stopButton" aria-label="Stop">
+                            <i class="fas fa-stop"></i>
+                        </button>
+                        <button id="forwardButton" aria-label="Forward 5s">
+                            <i class="fas fa-rotate-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <script src="js/pages/testing.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
