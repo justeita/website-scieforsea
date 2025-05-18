@@ -7,42 +7,42 @@ import { initMenu } from './components/menu/menu.js';
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registered with scope:', registration.scope);
+      .then(() => {
+        // ServiceWorker registered successfully
       })
-      .catch(err => {
-        console.log('ServiceWorker registration failed:', err);
+      .catch(() => {
+        // ServiceWorker registration failed
       });
   });
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const isMobile = window.innerWidth <= 768;
-    
-    const menuButton = document.getElementById('menuButton');
-    const mainContainer = document.querySelector('.main-container');
-    const navContainer = document.getElementById('menuPanel');
-    const backgroundMusic = document.getElementById('backgroundMusic');
-    const playPauseButton = document.getElementById('playPauseButton');
-    const stopButton = document.getElementById('stopButton');
-    const songStatus = document.querySelector('.song-status');
-    const timeSlider = document.querySelector('.time-slider');
-    const currentTimeDisplay = document.querySelector('.current-time');
-    const durationDisplay = document.querySelector('.duration');
+  const isMobile = window.innerWidth <= 768;
+  
+  const menuButton = document.getElementById('menuButton');
+  const mainContainer = document.querySelector('.main-container');
+  const navContainer = document.getElementById('menuPanel');
+  const backgroundMusic = document.getElementById('backgroundMusic');
+  const playPauseButton = document.getElementById('playPauseButton');
+  const stopButton = document.getElementById('stopButton');
+  const songStatus = document.querySelector('.song-status');
+  const timeSlider = document.querySelector('.time-slider');
+  const currentTimeDisplay = document.querySelector('.current-time');
+  const durationDisplay = document.querySelector('.duration');
 
-    const { updatePlayingStatus } = initInformation(songStatus);
-    
-    const toggleMusicEffect = (playing) => {
-        if (playing && mainContainer.classList.contains('menu-active')) {
-            mainContainer.classList.add('with-music');
-        } else {
-            mainContainer.classList.remove('with-music');
-        }
-    };
+  const { updatePlayingStatus } = initInformation(songStatus);
+  
+  const toggleMusicEffect = (playing) => {
+    if (playing && mainContainer.classList.contains('menu-active')) {
+      mainContainer.classList.add('with-music');
+    } else {
+      mainContainer.classList.remove('with-music');
+    }
+  };
 
-    await new Promise(resolve => setTimeout(resolve, 100));
-    
-    const { isPlaying } = initControls(backgroundMusic, playPauseButton, stopButton, updatePlayingStatus, toggleMusicEffect);
-    initSlider(backgroundMusic, timeSlider, currentTimeDisplay, durationDisplay, isMobile);
-    initMenu(menuButton, mainContainer, navContainer, toggleMusicEffect, isPlaying, isMobile);
+  await new Promise(resolve => setTimeout(resolve, 100));
+  
+  const { isPlaying } = initControls(backgroundMusic, playPauseButton, stopButton, updatePlayingStatus, toggleMusicEffect);
+  initSlider(backgroundMusic, timeSlider, currentTimeDisplay, durationDisplay, isMobile);
+  initMenu(menuButton, mainContainer, navContainer, toggleMusicEffect, isPlaying, isMobile);
 });

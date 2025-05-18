@@ -1,6 +1,7 @@
 // Script ini digunakan untuk cron-job.org atau layanan ping lainnya
 // untuk menjaga website tetap aktif dan tidak "tidur"
 
+/* eslint-disable no-undef */
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -14,5 +15,6 @@ const server = http.createServer((req, res) => {
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  // Server running on the specified port
 });
+/* eslint-enable no-undef */
