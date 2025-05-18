@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing - Scieforsea</title>
+    <title>Scieforsea - Buku Kenangan Digital Masa SMA</title>
+    <meta name="description" content="Kumpulan kenangan, cerita, dan momen-momen dari masa SMA yang diabadikan dalam bentuk website interaktif.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scieforsea.github.io/">
+    <meta property="og:title" content="Scieforsea - Buku Kenangan Digital Masa SMA">
+    <meta property="og:description" content="Kumpulan kenangan, cerita, dan momen-momen dari masa SMA yang diabadikan dalam bentuk website interaktif.">
+    <meta property="og:image" content="https://scieforsea.github.io/assets/img/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://scieforsea.github.io/">
+    <meta property="twitter:title" content="Scieforsea - Buku Kenangan Digital Masa SMA">
+    <meta property="twitter:description" content="Kumpulan kenangan, cerita, dan momen-momen dari masa SMA yang diabadikan dalam bentuk website interaktif.">
+    <meta property="twitter:image" content="https://scieforsea.github.io/assets/img/og-image.jpg">
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages/testing.css">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://scieforsea.github.io/">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <div class="main-container">
@@ -15,11 +42,10 @@
             <div class="menu-btn__bar"></div>
             <div class="menu-btn__bar"></div>
             <div class="menu-btn__bar"></div>
-        </button>
-        <video class="background-video" autoplay muted loop playsinline>
+        </button>        <video class="background-video" autoplay muted loop playsinline>
             <!-- Desktop video -->
-            <source src="assets/video/background/bg-video-dekstop.mp4" type="video/mp4">
-            <source src="assets/video/background/bg-video-dekstop.webm" type="video/webm">
+            <source src="assets/video/background/bg-video-desktop.mp4" type="video/mp4">
+            <source src="assets/video/background/bg-video-desktop.webm" type="video/webm">
             <!-- Mobile video -->
             <source src="assets/video/background/bg-video-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
             <source src="assets/video/background/bg-video-mobile.webm" type="video/webm" media="(max-width: 768px)">
@@ -51,40 +77,24 @@
             
             <!-- Audio Player Section -->
             <div class="audio-player-section">
-                <div class="audio-controls">
-                    <audio id="backgroundMusic" loop>
-                        <source src="assets/audio/audio-main-background.mp3" type="audio/mpeg">
-                    </audio>
-                    <div class="current-song">
-                        <span class="song-status">Not Playing</span>
-                        <span class="song-type">Background Music</span>
-                        <span class="song-title">♪ Littleroot Town</span>
-                    </div>
-                    <div class="time-control">
-                        <span class="current-time">0:00</span>
-                        <input type="range" class="time-slider" value="0" step="1">
-                        <span class="duration">0:00</span>
-                    </div>
-                    <div class="custom-controls">
-                        <button id="rewindButton" aria-label="Rewind 5s">
-                            <i class="fas fa-rotate-left"></i>
-                        </button>
-                        <button id="playPauseButton" aria-label="Play/Pause">
-                            <i class="fas fa-play"></i>
-                        </button>
-                        <button id="stopButton" aria-label="Stop">
-                            <i class="fas fa-stop"></i>
-                        </button>
-                        <button id="forwardButton" aria-label="Forward 5s">
-                            <i class="fas fa-rotate-right"></i>
-                        </button>
-                    </div>
+                <!-- Audio controls -->
+                <button id="rewindButton" aria-label="Rewind">«</button>
+                <button id="playPauseButton" aria-label="Play/Pause"><i class="fas fa-play"></i></button>
+                <button id="stopButton" aria-label="Stop"><i class="fas fa-stop"></i></button>
+                <button id="forwardButton" aria-label="Forward">»</button>
+                <div class="time-control">
+                    <span class="current-time">0:00</span>
+                    <input type="range" class="time-slider" min="0" max="0" step="0.1" value="0">
+                    <span class="duration">0:00</span>
                 </div>
             </div>
         </div>
     </nav>
     
-    <script src="js/pages/testing.js"></script>
+    <!-- Background music element -->
+    <audio id="backgroundMusic" src="assets/audio/audio-main-background.mp3" preload="auto"></audio>
+
+    <script src="js/pages/testing.js"></script>    <script src="js/sw-register.js"></script>
     <script src="js/main.js" type="module"></script>
 </body>
 </html>

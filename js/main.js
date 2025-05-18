@@ -3,6 +3,19 @@ import { initInformation } from './components/menu/information.js';
 import { initSlider } from './components/menu/slider.js';
 import { initMenu } from './components/menu/menu.js';
 
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('ServiceWorker registered with scope:', registration.scope);
+      })
+      .catch(err => {
+        console.log('ServiceWorker registration failed:', err);
+      });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     const isMobile = window.innerWidth <= 768;
     

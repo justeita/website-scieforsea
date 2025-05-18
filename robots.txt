@@ -1,0 +1,5 @@
+# filepath: /home/eita/dev/kibou/website-scieforsea/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://scieforsea.github.io/sitemap.xml

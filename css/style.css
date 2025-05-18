@@ -3,6 +3,7 @@
 @import url('components/menu/information.css');
 @import url('components/menu/slider.css');
 @import url('components/transition/transition.css');
+@import url('pages/testing.css');
 
 * {
     margin: 0;

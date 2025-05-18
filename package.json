@@ -1,0 +1,36 @@
+{
+  "name": "website-scieforsea",
+  "version": "1.0.0",
+  "description": "Buku kenangan digital masa SMA",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "lint": "eslint js/**/*.js",
+    "format": "prettier --write .",
+    "build": "echo 'Static site ready for deployment'",
+    "predeploy": "npm run lint && npm run format",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scieforsea/scieforsea.github.io.git"
+  },
+  "keywords": [
+    "yearbook",
+    "memories",
+    "school"
+  ],
+  "author": "STM Kapal Karam",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/scieforsea/scieforsea.github.io/issues"
+  },
+  "homepage": "https://scieforsea.github.io",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "gh-pages": "^6.0.0", 
+    "live-server": "^1.2.2",
+    "prettier": "^3.1.1"
+  }
+}
